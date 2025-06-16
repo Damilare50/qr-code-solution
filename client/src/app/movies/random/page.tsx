@@ -26,7 +26,7 @@ export default function MoviesPage() {
     const fetchMovies = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<Movie[]>(`/api/movies/random`);
+        const response = await axios.get<Movie[]>(`https://qr-code-solution.onrender.com/api/movies/random`);
         console.log('Fetched movies:', response.data);
         setMoviesData(() => response.data);
       } catch (error) {

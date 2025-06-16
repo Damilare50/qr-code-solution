@@ -12,7 +12,7 @@ export default function QRCodePage() {
   const fetchQRCode = async () => {
     try {
       setLoading(true);
-      const response = await axios.get<string>('/api/qr-code/generate');
+      const response = await axios.get<string>('https://qr-code-solution.onrender.com/api/qr-code/generate');
       setQrData(response.data);
       setTimeLeft(10);
     } catch (error) {
