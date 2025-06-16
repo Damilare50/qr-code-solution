@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Film, Star, Calendar, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import axios from 'axios';
@@ -12,6 +12,7 @@ interface Movie {
   Year: number;
   Genre: string;
   imdbRating: number;
+  Images: string[];
 }
 
 export default function MoviesPage() {
@@ -110,7 +111,7 @@ export default function MoviesPage() {
               <div className='relative overflow-hidden h-48'>
                 <Image
                   fill
-                  src={movie.Poster}
+                  src={movie.Images[1]}
                   alt={movie.Title}
                   className='object-cover group-hover:scale-110 transition-transform duration-300'
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw'
